@@ -1,6 +1,7 @@
 ﻿
 
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ Register TagPrefix="recaptcha" Namespace="Recaptcha" Assembly="Recaptcha" %>
 
 <!DOCTYPE html>
 
@@ -14,6 +15,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <style type="text/css">
+        .auto-style1 {
+            width: 36px;
+        }
+    </style>
+
 </head>
 
 
@@ -25,8 +32,6 @@
             <div class="item1">WELCOME</div>
         </div>
 
-        <form action="/action_page.php">
-
   <div class="container">
     <label for="uname"><b>Username</b></label></br>
     <input type="text" placeholder="Enter Username" name="uname" required>
@@ -36,15 +41,48 @@
     <input type="password" placeholder="Enter Password" name="psw" required>
       </br>
         
-    <button type="submit">Login</button></br>
+    <button type="submit" id="login_btn" onclick="login_action">Login</button>
+      <asp:Label ID="login_lbl" runat="server"></asp:Label>
+      </br>
 
-  </div>
+      <recaptcha:RecaptchaControl ID="recaptcha" runat="server"
+                    PublicKey="6Le1MLgUAAAAAH8gsV23hWWQmSV0BuupSV3-VCAj"
+                    PrivateKey="6Le1MLgUAAAAAOB-LMqbJYCrKH5w4j9Gf9GRsksT" />
+
+      Another self Captch since Google Recaptcha is not working without sql I guess:
+      </br>
+      <script>
+          var num1 = Math.floor((Math.random() * 10) + 1);
+          var num2 = Math.floor((Math.random() * 10) + 1);
+          var total = num1 + num2;
+
+          document.getElementById("num1").innerHTML = num1;
+          document.getElementById("num2").innerHTML = num1;
+          document.getElementById("total").innerHTML = num1;
+          
+      </script>
+      <label id="num1"></label>
+      +
+      <label id="num2"></label>
+      =
+      
+      <input id="tot_vald" class="auto-style1" placeholder="##" type="text" /></div>
+        <script>
+          var num1 = Math.floor((Math.random() * 10) + 1);
+          var num2 = Math.floor((Math.random() * 10) + 1);
+          var total = num1 + num2;
+
+          document.getElementById("num1").innerHTML = num1;
+          document.getElementById("num2").innerHTML = num2;
+          //document.getElementById("total").innerHTML = total;
+          
+      </script>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Create New User</button>
+    <button type="button" class="cancelbtn" id="regester_btn">Create New User</button>
   </div>
-</form>
     </form>
+    
 
 </body>
 
