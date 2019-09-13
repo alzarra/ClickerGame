@@ -33,12 +33,19 @@
         </div>
 
   <div class="container">
-    <label for="uname"><b>Username</b></label></br>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+     
+    <asp:Label ID="UserName_LB" runat="server" Text="User Name:"></asp:Label></br>
+
+    <asp:TextBox ID="UserName_TXT"  runat="server" ></asp:TextBox>
+      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter your User Name" ControlToValidate="UserName_TXT"></asp:RequiredFieldValidator>
+      <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="UserName_TXT" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
       </br>
 
-    <label for="psw"><b>Password</b></label></br>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <asp:Label ID="Password_LB" runat="server" Text="Password:"></asp:Label></br>
+
+    <asp:TextBox ID="Password_TXT" TextMode="Password" runat="server"></asp:TextBox>
+      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please enter your Password" ControlToValidate="Password_TXT"></asp:RequiredFieldValidator>
+      <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="Password_TXT" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
       </br>
         
     <button type="submit" id="login_btn" onclick="login_action">Login</button>
@@ -79,11 +86,10 @@
       </script>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn" id="regester_btn">Create New User</button>
+    <asp:Button runat="server" CausesValidation="false" class="cancelbtn" id="regester_btn" Text="Register New User" OnClick="regester_btn_Click1"></asp:Button>
   </div>
     </form>
     
 
 </body>
-
 </html>

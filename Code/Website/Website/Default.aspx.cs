@@ -116,30 +116,37 @@ public partial class _Default : System.Web.UI.Page
     //login_lbl.Text = "Login Successful";
     protected void login_action(object sender, EventArgs e)
     {
-        if (Page.IsValid)
-        {
-            login_lbl.Text = "Login Successful";
-        }
-        else login_lbl.Text = "Faild to login";
+        //if (Page.IsValid)
+        //{
+        //    login_lbl.Text = "Login Successful";
+        //}
+        //else login_lbl.Text = "Faild to login";
 
         ////////////////////////// anthor one if the button work //////////////////
 
-        int rt_ansr = tot_vald.Text;
+        //int rt_ansr = tot_vald.Text;
 
-        if (rt_ansr == total)
-        {
-            login_lbl.Text = "Login Successful";
-        }
+        //if (rt_ansr == total)
+        //{
+        //    login_lbl.Text = "Login Successful";
+        //}
 
-        else
-        {
-            login_lbl.Text = "Faild to login";
-        }
+        //else
+        //{
+        //    login_lbl.Text = "Faild to login";
+        //}
 
     }
 
     protected void Page_Load(object sender, EventArgs e)
     {
 
+    }
+
+
+
+    protected void regester_btn_Click1(object sender, EventArgs e)
+    {
+        Response.Redirect("Default2.aspx");
     }
 }
