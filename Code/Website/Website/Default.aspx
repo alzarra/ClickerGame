@@ -17,7 +17,7 @@
 
     <style type="text/css">
         .auto-style1 {
-            width: 36px;
+            width: 162px;
         }
     </style>
 
